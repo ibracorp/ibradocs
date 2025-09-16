@@ -1,0 +1,8 @@
+{
+  "label": "Media Servers & Management",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Build your perfect media setup with Plex, Jellyfin, Sonarr, Radarr, and related automation tools for your media library."
+  }
+}

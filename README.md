@@ -1,6 +1,12 @@
-# Website
+<div align="center">
+  <img src="static/img/ibracorpV3_logo.png" alt="IBRACORP Logo" width="400" />
+</div>
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+# IBRADOCS
+
+**IBRADOCS** - Your comprehensive guide to self-hosting, gaming servers, media management, and homelab infrastructure. Created by IBRACORP™.
+
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator, with custom IBRACORP branding and enhanced features.
 
 ## Quick Start
 
@@ -42,30 +48,27 @@ yarn build    # Build for production
 - `make check` - Same as `make test`
 - `make fix` - Fix linting and formatting issues automatically
 
-### Utilities
-- `make swizzle` or `yarn swizzle` - Eject and customize theme components
-- `make translations` or `yarn write-translations` - Generate translation files
-- `make heading-ids` or `yarn write-heading-ids` - Generate heading IDs for docs
+## Features
 
-## Deployment
+### 📚 Documentation Structure
+- **Gaming Servers** - Minecraft, Palworld, and more
+- **Media Management** - Plex, Jellyfin, Sonarr, Radarr automation
+- **Networking** - VPNs, firewalls, connectivity solutions
+- **Reverse Proxies** - Nginx Proxy Manager, Traefik setups
+- **Security** - Authentication, SSL, best practices
+- **Tools & Utilities** - Monitoring, backup, productivity apps
 
-Using SSH:
+### 🚀 Enhanced User Experience
+- **Interactive Cards** - Visual navigation with descriptions and icons
+- **Status Dashboard** - System health and updates section
+- **Community Integration** - Discord, YouTube, GitHub links
+- **Responsive Design** - Perfect on desktop, tablet, and mobile
 
-```bash
-USE_SSH=true make deploy
-# or
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> make deploy
-# or
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command builds the website and pushes to the `gh-pages` branch.
+### ⚡ Developer Experience
+- **Yarn Package Manager** - Fast, reliable dependency management
+- **Make Commands** - Simplified development workflow
+- **TypeScript** - Full type safety throughout
+- **Modern Tooling** - ESLint, Prettier, Husky pre-commit hooks
 
 ## Code Quality & Pre-commit Hooks
 
@@ -84,3 +87,40 @@ A pre-commit hook automatically runs on every commit to:
 3. Only process files that are staged for commit
 
 If the hook finds issues it can't auto-fix, the commit will be rejected. Fix the issues and try committing again.
+
+## IBRACORP Brand Guidelines
+
+### Colors
+- **Primary Red**: `#E94B3C` (RGB: 233, 75, 60)
+- **Dark Variants**: Auto-generated from primary
+- **Usage**: Buttons, links, hover states, accents
+
+### Typography
+- **Headings**: Bold, clear hierarchy
+- **Body**: Optimized line-height (1.6) for readability
+- **Code**: Monospace with syntax highlighting
+
+### Design Principles
+- **Dark First**: Default dark mode for tech audience
+- **High Contrast**: Ensure readability in both themes
+- **Modern**: Clean cards, smooth animations, glass effects
+- **Mobile Ready**: Responsive design for all devices
+
+## Contributing
+
+1. **Fork & Clone**: Set up your development environment
+2. **Install Dependencies**: `make setup` or `yarn install`
+3. **Start Development**: `make dev` or `yarn start`
+4. **Quality Check**: `make check` before committing
+5. **Submit PR**: Follow conventional commit messages
+
+## Community Links
+
+- 💬 **Discord**: [Join IBRACORP Community](https://discord.gg/ibracorp)
+- 📺 **YouTube**: [IBRACORP Channel](https://youtube.com/@ibracorp)
+- 🐙 **GitHub**: [IBRACORP Organization](https://github.com/ibracorp)
+- 💝 **Support**: [Donate via PayPal](https://paypal.me/ibracorp)
+
+---
+
+**Built with ❤️ by IBRACORP™** - Empowering the self-hosting community with quality documentation and guides.

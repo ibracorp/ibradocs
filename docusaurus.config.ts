@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'IBRADOCS',
+  tagline: 'Another fine product brought to you by IBRACORP™',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -15,15 +15,14 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://docs.ibracorp.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'ibracorp', // Usually your GitHub org/user name.
+  projectName: 'ibradocs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -73,9 +72,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'IBRADOCS',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'IBRACORP Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -83,11 +82,20 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Documentation',
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://discord.gg/ibracorp',
+          label: 'Discord',
+          position: 'right',
+        },
+        {
+          href: 'https://youtube.com/@ibracorp',
+          label: 'YouTube',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/ibracorp',
           label: 'GitHub',
           position: 'right',
         },
@@ -97,11 +105,23 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Getting Started',
               to: '/docs/intro',
+            },
+            {
+              label: 'Gaming Servers',
+              to: '/docs/category/gaming-servers',
+            },
+            {
+              label: 'Media Servers',
+              to: '/docs/category/media-servers--management',
+            },
+            {
+              label: 'Networking',
+              to: '/docs/category/networking',
             },
           ],
         },
@@ -109,38 +129,43 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://discord.gg/ibracorp',
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'YouTube',
+              href: 'https://youtube.com/@ibracorp',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/ibracorp',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Support',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'Donate',
+              href: 'https://paypal.me/ibracorp',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Disclaimer',
+              to: '/disclaimer',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} IBRACORP™. All rights reserved.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
     },
   } satisfies Preset.ThemeConfig,
 };

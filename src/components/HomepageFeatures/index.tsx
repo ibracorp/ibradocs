@@ -5,52 +5,106 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg?: React.ComponentType<React.ComponentProps<'svg'>>;
+  icon?: string;
   description: ReactNode;
+  link: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Gaming Servers',
+    icon: '🎮',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Set up and manage game servers including Minecraft, Palworld, and more.
+        Complete guides for installation, configuration, and optimization.
       </>
     ),
+    link: '/docs/category/gaming-servers',
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Media Servers & Management',
+    icon: '📺',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Build your perfect media setup with Plex, Jellyfin, Sonarr, Radarr, and
+        related automation tools for your media library.
       </>
     ),
+    link: '/docs/category/media-servers--management',
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Networking',
+    icon: '🌐',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Network configuration, VPNs, firewalls, and connectivity solutions.
+        Learn to secure and optimize your network infrastructure.
       </>
     ),
+    link: '/docs/category/networking',
+  },
+  {
+    title: 'Reverse Proxies',
+    icon: '🔄',
+    description: (
+      <>
+        Nginx Proxy Manager, Traefik, and other reverse proxy solutions. Secure
+        external access to your self-hosted services.
+      </>
+    ),
+    link: '/docs/category/reverse-proxies',
+  },
+  {
+    title: 'Security',
+    icon: '🔒',
+    description: (
+      <>
+        Protect your infrastructure with proper authentication, SSL
+        certificates, and security best practices for self-hosted environments.
+      </>
+    ),
+    link: '/docs/category/security',
+  },
+  {
+    title: 'Misc. Tools',
+    icon: '🛠️',
+    description: (
+      <>
+        Additional tools and utilities for your homelab including monitoring,
+        backup solutions, and productivity applications.
+      </>
+    ),
+    link: '/docs/category/misc-tools',
   },
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+function Feature({ title, Svg, icon, description, link }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+      <div className="card margin-bottom--lg">
+        <div className="card__header">
+          <div className="text--center">
+            {icon && (
+              <div className={styles.featureIcon} role="img">
+                {icon}
+              </div>
+            )}
+            {Svg && <Svg className={styles.featureSvg} role="img" />}
+          </div>
+          <Heading as="h3" className="text--center">
+            {title}
+          </Heading>
+        </div>
+        <div className="card__body">
+          <p>{description}</p>
+        </div>
+        <div className="card__footer">
+          <a href={link} className="button button--primary button--block">
+            Explore {title}
+          </a>
+        </div>
       </div>
     </div>
   );

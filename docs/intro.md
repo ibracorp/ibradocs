@@ -2,46 +2,54 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Welcome to IBRADOCS
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Welcome to **IBRADOCS** - your comprehensive guide to self-hosting, gaming servers, media management, and homelab infrastructure!
 
-## Getting Started
+## What You'll Find Here
 
-Get started by **creating a new site**.
+IBRADOCS provides detailed, tested guides for:
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- **Gaming Servers** - Minecraft, Palworld, and more
+- **Media Management** - Plex, Jellyfin, Sonarr, Radarr automation
+- **Networking** - VPNs, firewalls, and connectivity solutions
+- **Reverse Proxies** - Secure external access to your services
+- **Security** - Authentication and SSL best practices
+- **Tools & Utilities** - Monitoring, backup, and productivity apps
 
-### What you'll need
+## Before You Begin
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### ⚠️ Important Disclaimer
 
-## Generate a new site
+**Please read our [Disclaimer](/disclaimer) before proceeding.** All guides are for educational purposes - always test in development environments first and maintain proper backups.
 
-Generate a new Docusaurus site using the **classic template**.
+### Prerequisites
 
-The classic template will automatically be added to your project after you run the command:
+Most guides assume basic familiarity with:
+- Command line interfaces (Terminal/PowerShell)
+- Docker and containerization concepts
+- Basic networking principles
+- Linux system administration (for many guides)
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+### Getting Help
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+- 💬 **Discord**: Join our [community](https://discord.gg/ibracorp) for real-time help
+- 📺 **YouTube**: Watch video tutorials on our [channel](https://youtube.com/@ibracorp)
+- 📚 **Documentation**: Browse categories using the sidebar navigation
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+## Quick Navigation
 
-## Start your site
+Choose your path based on what you want to accomplish:
 
-Run the development server:
+### First Time Self-Hoster?
+Start with our networking and security fundamentals before diving into specific applications.
 
-```bash
-cd my-website
-npm run start
-```
+### Setting Up Media Server?
+Check out our Media Servers & Management section for complete Plex/Jellyfin setups.
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+### Gaming with Friends?
+Explore our Gaming Servers section for popular game server installations.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+---
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+**Ready to get started?** Use the sidebar to navigate to your area of interest, or join our Discord community if you have questions!

@@ -4,27 +4,197 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/* IBRACORP Brand Colors */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* IBRACORP Red - Primary Brand Color */
+  --ifm-color-primary: #e94b3c;
+  --ifm-color-primary-dark: #e63421;
+  --ifm-color-primary-darker: #e42b16;
+  --ifm-color-primary-darkest: #c22415;
+  --ifm-color-primary-light: #ec6257;
+  --ifm-color-primary-lighter: #ee6f65;
+  --ifm-color-primary-lightest: #f28a82;
+
+  /* Additional brand colors */
+  --ibracorp-red: #e94b3c;
+  --ibracorp-red-rgb: 233, 75, 60;
+
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark mode adjustments for IBRACORP brand */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #ec6257;
+  --ifm-color-primary-dark: #e94b3c;
+  --ifm-color-primary-darker: #e63421;
+  --ifm-color-primary-darkest: #c22415;
+  --ifm-color-primary-light: #ee6f65;
+  --ifm-color-primary-lighter: #f07a70;
+  --ifm-color-primary-lightest: #f28a82;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* IBRACORP Homepage Banner Styling */
+.hero--primary {
+  background: linear-gradient(135deg, var(--ibracorp-red) 0%, #c22415 100%);
+  background-attachment: fixed;
+}
+
+.hero__title {
+  color: white;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero__subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom button styling */
+.button--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button--secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button--outline.button--secondary {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: white;
+}
+
+.button--outline.button--secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  color: white;
+}
+
+/* Feature card styling */
+.card {
+  transition: all 0.3s ease;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(233, 75, 60, 0.15);
+  border-color: rgba(233, 75, 60, 0.2);
+}
+
+.card .button--primary {
+  background: var(--ibracorp-red);
+  border-color: var(--ibracorp-red);
+  transition: all 0.3s ease;
+}
+
+.card .button--primary:hover {
+  background: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Enhanced navigation styling */
+.navbar {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__item.navbar__link:hover {
+  color: var(--ibracorp-red);
+}
+
+/* Footer enhancements */
+.footer--dark {
+  background: #1a1a1a;
+}
+
+.footer__link-item:hover {
+  color: var(--ibracorp-red);
+}
+
+/* Community section improvements */
+.communitySection {
+  background: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .communitySection {
+  background: var(--ifm-background-color);
+}
+
+/* Target the specific subtitle in community section with higher specificity */
+.communitySection .hero__subtitle,
+section.communitySection .hero__subtitle,
+section[class*='communitySection'] .hero__subtitle {
+  color: #000000 !important; /* Black text in light mode */
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+[data-theme='dark'] .communitySection .hero__subtitle,
+[data-theme='dark'] section.communitySection .hero__subtitle,
+[data-theme='dark'] section[class*='communitySection'] .hero__subtitle {
+  color: var(
+    --ifm-color-content-secondary
+  ) !important; /* Default dark mode color */
+}
+
+/* Improve readability */
+.communitySection h2 {
+  color: var(--ifm-heading-color);
+  margin-bottom: 1rem;
+}
+
+.communitySection p {
+  color: var(--ifm-color-content);
+  line-height: 1.6;
+}
+
+/* Status section improvements */
+.statusSection {
+  background: var(--ifm-color-emphasis-50);
+}
+
+[data-theme='dark'] .statusSection {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.statusSection h2 {
+  color: var(--ifm-heading-color);
+}
+
+.statusAlert {
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .statusAlert {
+  background: rgba(40, 167, 69, 0.15);
+  border: 1px solid rgba(40, 167, 69, 0.4);
+}
+
+.statusAlert strong {
+  color: #28a745;
+}
+
+.statusAlert p {
+  color: var(--ifm-color-content-secondary);
+  margin: 0.5rem 0 0 0;
 }

@@ -1,0 +1,8 @@
+{
+  "label": "Misc. Tools",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Additional tools and utilities for your homelab including monitoring, backup solutions, and productivity applications."
+  }
+}
