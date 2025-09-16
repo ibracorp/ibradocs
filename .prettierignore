@@ -1,0 +1,9 @@
+node_modules/
+build/
+.docusaurus/
+dist/
+*.min.js
+yarn.lock
+package-lock.json
+*.md
+*.mdx
