@@ -18,7 +18,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky",
-    "make:docs": "node scripts/make-doc.cjs"
+    "make:docs": "node scripts/make-doc.cjs",
+    "make:blog": "node scripts/make-blog.cjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.8.1",

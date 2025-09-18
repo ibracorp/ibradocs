@@ -1,19 +1,49 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+ibracorp:
+  label: IBRACORP
+  permalink: /ibracorp
+  description: Official IBRACORP tutorials and guides
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+gaming:
+  label: Gaming Servers
+  permalink: /gaming
+  description: Game server setup and management guides
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+media:
+  label: Media Servers
+  permalink: /media
+  description: Media streaming and management solutions
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+networking:
+  label: Networking
+  permalink: /networking
+  description: Network infrastructure and connectivity solutions
+
+security:
+  label: Security
+  permalink: /security
+  description: Authentication, authorization, and security tools
+
+reverse-proxy:
+  label: Reverse Proxy
+  permalink: /reverse-proxy
+  description: Reverse proxy configuration and management
+
+docker:
+  label: Docker
+  permalink: /docker
+  description: Docker containerization and orchestration
+
+unraid:
+  label: Unraid
+  permalink: /unraid
+  description: Unraid server and application setup
+
+self-hosted:
+  label: Self-Hosted
+  permalink: /self-hosted
+  description: Self-hosted application deployment and management
+
+homelab:
+  label: Homelab
+  permalink: /homelab
+  description: Home laboratory and infrastructure setup

@@ -1,25 +1,43 @@
-yangshun:
-  name: Yangshun Tay
-  title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
-  url: https://linkedin.com/in/yangshun
-  image_url: https://github.com/yangshun.png
+sycotix:
+  name: Sycotix
+  title: Admin, Writer & Producer
+  url: https://ibracorp.io
+  image_url: https://github.com/sycotix.png
   page: true
   socials:
-    x: yangshunz
-    linkedin: yangshun
-    github: yangshun
-    newsletter: https://www.greatfrontend.com
+    youtube: '@ibracorp'
+    discord: https://discord.gg/ibracorp
+    github: ibracorp
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
+north:
+  name: North
+  title: Contributor & Developer
+  url: https://ibracorp.io
+  image_url: https://github.com/north.png
+  page: true
   socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com
+    youtube: '@ibracorp'
+    discord: https://discord.gg/ibracorp
+    github: ibracorp
+
+hawks:
+  name: Hawks
+  title: Admin & Testing Lead
+  url: https://ibracorp.io
+  image_url: https://github.com/hawks.png
+  page: true
+  socials:
+    youtube: '@ibracorp'
+    discord: https://discord.gg/ibracorp
+    github: ibracorp
+
+discduck:
+  name: DiscDuck
+  title: Admin & Documentation Lead
+  url: https://ibracorp.io
+  image_url: https://github.com/discduck.png
+  page: true
+  socials:
+    youtube: '@ibracorp'
+    discord: https://discord.gg/ibracorp
+    github: ibracorp

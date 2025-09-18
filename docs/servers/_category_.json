@@ -1,0 +1,8 @@
+{
+  "label": "Servers",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Server infrastructure and virtualization solutions including Proxmox VE, TrueNAS Scale, and virtual Unraid deployments."
+  }
+}

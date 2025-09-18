@@ -1,0 +1,8 @@
+{
+  "label": "Reverse Proxies",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Secure your services with reverse proxy solutions including SWAG and Traefik for SSL termination and routing."
+  }
+}

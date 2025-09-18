@@ -1,5 +1,5 @@
 # Docusaurus Development Makefile
-.PHONY: help install dev build serve clean deploy test lint typecheck docs
+.PHONY: help install dev build serve clean deploy test lint typecheck docs blog
 
 # Default target
 help: ## Show this help message
@@ -26,6 +26,9 @@ deploy: ## Deploy to GitHub Pages
 
 docs: ## Interactive documentation generator
 	yarn make:docs
+
+blog: ## Interactive blog post generator
+	yarn make:blog
 
 test: lint format-check typecheck ## Run all quality checks
 
