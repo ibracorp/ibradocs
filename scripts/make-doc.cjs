@@ -14,45 +14,45 @@ class DocGenerator {
     this.docsDir = './docs';
     this.rl = readline.createInterface({
       input: process.stdin,
-      output: process.stdout
+      output: process.stdout,
     });
 
     // Categories from https://docs.ibracorp.io/ibracorp/all-guides-in-order/documentation
     this.categories = {
-      'gaming': {
+      gaming: {
         name: 'Gaming Servers',
-        description: 'Game server hosting and management'
+        description: 'Game server hosting and management',
       },
       'media-servers': {
         name: 'Media Servers and Management',
-        description: 'Plex, Jellyfin, *arr stack, and media management'
+        description: 'Plex, Jellyfin, *arr stack, and media management',
       },
       'misc-tools': {
         name: 'Miscellaneous Tools',
-        description: 'Utilities, productivity tools, and general applications'
+        description: 'Utilities, productivity tools, and general applications',
       },
-      'networking': {
+      networking: {
         name: 'Networking',
-        description: 'Network configuration, VPNs, and connectivity'
+        description: 'Network configuration, VPNs, and connectivity',
       },
       'reverse-proxies': {
         name: 'Reverse Proxies',
-        description: 'Traefik, NGINX, and reverse proxy configurations'
+        description: 'Traefik, NGINX, and reverse proxy configurations',
       },
-      'security': {
+      security: {
         name: 'Security',
-        description: 'Authentication, authorization, and security tools'
+        description: 'Authentication, authorization, and security tools',
       },
-      'servers': {
+      servers: {
         name: 'Servers',
-        description: 'Server setup, virtualization, and infrastructure'
-      }
+        description: 'Server setup, virtualization, and infrastructure',
+      },
     };
   }
 
   // Helper to get user input
   async question(prompt) {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       this.rl.question(prompt, resolve);
     });
   }
@@ -62,7 +62,7 @@ class DocGenerator {
     console.log('\n📁 Available Categories:');
     console.log('========================');
 
-    Object.entries(this.categories).forEach(([key, category], index) => {
+    Object.entries(this.categories).forEach(([, category], index) => {
       console.log(`${index + 1}. ${category.name}`);
       console.log(`   ${category.description}`);
       console.log('');
@@ -110,11 +110,17 @@ class DocGenerator {
           label: this.categories[category].name,
           position: this.getCategoryPosition(category),
           collapsible: true,
-          collapsed: false
+          collapsed: false,
         };
 
-        fs.writeFileSync(categoryJsonPath, JSON.stringify(categoryData, null, 2), 'utf8');
-        console.log(`✅ Created category configuration: ${category}/_category_.json`);
+        fs.writeFileSync(
+          categoryJsonPath,
+          JSON.stringify(categoryData, null, 2),
+          'utf8'
+        );
+        console.log(
+          `✅ Created category configuration: ${category}/_category_.json`
+        );
       }
     }
 
@@ -124,13 +130,13 @@ class DocGenerator {
   // Get category position for ordering
   getCategoryPosition(category) {
     const positions = {
-      'security': 1,
+      security: 1,
       'reverse-proxies': 2,
-      'networking': 3,
+      networking: 3,
       'media-servers': 4,
-      'gaming': 5,
+      gaming: 5,
       'misc-tools': 6,
-      'servers': 7
+      servers: 7,
     };
     return positions[category] || 99;
   }
@@ -142,7 +148,9 @@ class DocGenerator {
 
     try {
       // Get title
-      const title = await this.question('📝 Enter the application/service title: ');
+      const title = await this.question(
+        '📝 Enter the application/service title: '
+      );
       if (!title.trim()) {
         console.log('❌ Title cannot be empty!');
         this.rl.close();
@@ -150,7 +158,9 @@ class DocGenerator {
       }
 
       // Get description
-      const description = await this.question('📄 Enter a one-sentence description: ');
+      const description = await this.question(
+        '📄 Enter a one-sentence description: '
+      );
       if (!description.trim()) {
         console.log('❌ Description cannot be empty!');
         this.rl.close();
@@ -159,7 +169,9 @@ class DocGenerator {
 
       // Display and get category
       this.displayCategories();
-      const categoryInput = await this.question('🗂️  Select category (number or name): ');
+      const categoryInput = await this.question(
+        '🗂️  Select category (number or name): '
+      );
       const category = this.validateCategorySelection(categoryInput);
 
       if (!category) {
@@ -168,9 +180,15 @@ class DocGenerator {
       }
 
       // Get optional fields
-      const officialDocs = await this.question('🔗 Official documentation URL (optional): ');
-      const mainWebsite = await this.question('🌐 Main website URL (optional): ');
-      const repoName = await this.question('📦 Repository name (for Unraid template): ');
+      const officialDocs = await this.question(
+        '🔗 Official documentation URL (optional): '
+      );
+      const mainWebsite = await this.question(
+        '🌐 Main website URL (optional): '
+      );
+      const repoName = await this.question(
+        '📦 Repository name (for Unraid template): '
+      );
 
       // Read template
       if (!fs.existsSync(this.templatePath)) {
@@ -188,7 +206,10 @@ class DocGenerator {
         .replace(/\[category, ibracorp\]/g, `["${category}", "ibracorp"]`)
         .replace(/ADD_OFFICIAL_DOCS_URL_HERE/g, officialDocs || '#')
         .replace(/ADD_MAIN_WEBSITE_URL_HERE/g, mainWebsite || '#')
-        .replace(/REPO's Repository/g, repoName ? `${repoName}'s Repository` : "REPO's Repository");
+        .replace(
+          /REPO's Repository/g,
+          repoName ? `${repoName}'s Repository` : "REPO's Repository"
+        );
 
       // Create filename and path
       const filename = this.createFilename(title);
@@ -197,8 +218,13 @@ class DocGenerator {
 
       // Check if file already exists
       if (fs.existsSync(filepath)) {
-        const overwrite = await this.question(`⚠️  File ${filename}.md already exists. Overwrite? (y/N): `);
-        if (overwrite.toLowerCase() !== 'y' && overwrite.toLowerCase() !== 'yes') {
+        const overwrite = await this.question(
+          `⚠️  File ${filename}.md already exists. Overwrite? (y/N): `
+        );
+        if (
+          overwrite.toLowerCase() !== 'y' &&
+          overwrite.toLowerCase() !== 'yes'
+        ) {
           console.log('📋 Operation cancelled.');
           return;
         }
@@ -217,7 +243,6 @@ class DocGenerator {
       console.log('- Remove placeholder text and sections');
       console.log('- Add screenshots and code examples');
       console.log('- Remove the internal warning box before publishing');
-
     } catch (error) {
       console.log('❌ Error:', error.message);
     } finally {

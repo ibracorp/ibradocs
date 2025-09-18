@@ -14,8 +14,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
-    "lint:fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx,cjs}\"",
+    "lint:fix": "eslint \"**/*.{js,jsx,ts,tsx,cjs}\" --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky",
@@ -62,11 +62,11 @@
     "node": ">=18.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,jsx,ts,tsx,cjs}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{json,css,scss,md}": [
+    "*.{json,css,scss,md,yml,yaml,webmanifest}": [
       "prettier --write"
     ]
   }
