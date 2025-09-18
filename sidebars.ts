@@ -19,38 +19,15 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Gaming Servers',
-      items: ['gaming/minecraft-server'],
+      items: ['gaming/test'],
     },
     {
       type: 'category',
       label: 'Media Servers & Management',
       items: ['media/plex-setup', 'media/unmanic'],
     },
-    {
-      type: 'category',
-      label: 'Networking',
-      items: ['networking/cloudflare-tunnel', 'networking/vpn-setup'],
-    },
-    {
-      type: 'category',
-      label: 'Reverse Proxies',
-      items: ['reverse-proxies/nginx-proxy-manager'],
-    },
-    {
-      type: 'category',
-      label: 'Security',
-      items: ['security/authelia'],
-    },
-    {
-      type: 'category',
-      label: 'Tools & Utilities',
-      items: [
-        'tools/docker-compose',
-        'tools/file-browser',
-        'tools/homarr',
-        'tools/theme-park',
-      ],
-    },
+    'privacy-policy',
+    'terms-and-conditions',
   ],
 };
 

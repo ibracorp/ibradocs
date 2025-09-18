@@ -241,9 +241,6 @@ Process:
 
 ## Related Documentation
 
-- [Docker Compose Guide](../tools/docker-compose.md)
-- [GPU Setup and Configuration](../tools/docker-compose.md)
 - [Media Server Integration](../media/plex-setup.md)
-- [File Management](../tools/file-browser.md)
 
 For advanced configuration options and plugin development, refer to the official Unmanic documentation and community resources.

@@ -113,15 +113,11 @@ const config: Config = {
             },
             {
               label: 'Gaming Servers',
-              to: '/docs/gaming/minecraft-server',
+              to: '/docs/gaming/test',
             },
             {
               label: 'Media Servers',
               to: '/docs/media/plex-setup',
-            },
-            {
-              label: 'Networking',
-              to: '/docs/networking/cloudflare-tunnel',
             },
           ],
         },
