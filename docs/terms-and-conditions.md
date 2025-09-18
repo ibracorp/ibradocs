@@ -1,6 +1,5 @@
 ---
 title: "Terms and Conditions"
-sidebar_position: 999
 description: "Terms and conditions for using IBRACORP documentation"
 ---
 

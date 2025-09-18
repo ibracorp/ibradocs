@@ -1,6 +1,5 @@
 ---
 title: "Privacy Policy"
-sidebar_position: 998
 description: "Privacy policy for IBRACORP documentation website"
 ---
 

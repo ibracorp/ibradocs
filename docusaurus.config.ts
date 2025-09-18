@@ -113,7 +113,7 @@ const config: Config = {
             },
             {
               label: 'Gaming Servers',
-              to: '/docs/gaming/test',
+              to: '/docs/gaming/team-fortress-2',
             },
             {
               label: 'Media Servers',
