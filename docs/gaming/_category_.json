@@ -1,6 +1,8 @@
 {
   "label": "Gaming Servers",
-  "position": 5,
-  "collapsible": true,
-  "collapsed": false
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Host your own game servers with dedicated server setups for popular games like Minecraft, CS:GO, Rust, and more on Unraid."
+  }
 }

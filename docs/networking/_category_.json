@@ -1,0 +1,8 @@
+{
+  "label": "Networking",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Secure and optimize your network with firewall configurations, VPN solutions, and remote access tools for your homelab."
+  }
+}

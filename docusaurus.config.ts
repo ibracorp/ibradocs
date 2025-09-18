@@ -41,6 +41,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          routeBasePath: '/', // Serve docs from root instead of /docs/
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -109,15 +110,15 @@ const config: Config = {
           items: [
             {
               label: 'Getting Started',
-              to: '/docs/intro',
+              to: '/intro',
             },
             {
               label: 'Gaming Servers',
-              to: '/docs/gaming/team-fortress-2',
+              to: '/gaming/team-fortress-2',
             },
             {
               label: 'Media Servers',
-              to: '/docs/media/jellyfin',
+              to: '/media/jellyfin',
             },
           ],
         },
@@ -156,11 +157,11 @@ const config: Config = {
           items: [
             {
               label: 'Privacy Policy',
-              to: '/docs/privacy-policy',
+              to: '/privacy-policy',
             },
             {
               label: 'Terms & Conditions',
-              to: '/docs/terms-and-conditions',
+              to: '/terms-and-conditions',
             },
           ],
         },
