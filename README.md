@@ -27,7 +27,9 @@ yarn start    # Start development server
 yarn build    # Build for production
 ```
 
-## Creating New Documentation
+## Creating New Content
+
+### Documentation Generator
 
 Use the interactive documentation generator to create new guides that follow the IBRACORP template:
 
@@ -43,7 +45,25 @@ This will prompt you for:
 - Category (Gaming Servers, Media Servers, Security, etc.)
 - Optional: Official docs URL, main website, repository name
 
-The generator will create a new markdown file in the appropriate category directory with all the IBRACORP template structure and placeholders ready for you to fill in.
+### Blog Post Generator
+
+Use the interactive blog post generator to create new blog posts with IBRACORP branding:
+
+```bash
+make blog
+# or
+yarn make:blog
+```
+
+This will prompt you for:
+- Blog post title
+- One-sentence description
+- Author selection (from IBRACORP team)
+- Tags (from predefined tag list)
+- Publication date (defaults to today)
+- Optional: Featured image filename
+
+Both generators create content with all the IBRACORP template structure and placeholders ready for you to fill in.
 
 ## Available Commands
 
@@ -52,6 +72,7 @@ The generator will create a new markdown file in the appropriate category direct
 - `make serve` or `yarn serve` - Serve built site locally
 - `make clean` or `yarn clear` - Clear Docusaurus cache
 - `make docs` or `yarn make:docs` - Interactive documentation generator
+- `make blog` or `yarn make:blog` - Interactive blog post generator
 
 ### Build & Deploy
 - `make build` or `yarn build` - Build static site for production
