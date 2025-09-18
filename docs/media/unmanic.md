@@ -1,246 +1,698 @@
-# Unmanic Media Processing
+---
+title: "Unmanic"
+sidebar_position: 6
+description: "Unraid media library optimization and transcoding automation"
+tags: ["media", "ibracorp"]
+source_url: https://docs.ibracorp.io/unmanic/
+---
 
-Unmanic is a library optimization tool designed to manage and process media files automatically. It provides transcoding, file management, and media library optimization capabilities with a focus on simplicity and extensive customization.
+# Unmanic
 
-## Overview
+Unraid media library optimization and transcoding automation
 
-Unmanic helps maintain consistent media formats across your library by:
-- **Automatic Transcoding** - Convert files to uniform formats
-- **Scheduled Processing** - Run optimization tasks on schedule
-- **Real-time Monitoring** - Watch folders for new/modified files
-- **Hardware Acceleration** - Support for GPU-accelerated encoding
+:::info Unmanic Media Optimizer
+**Video**
+[IBRACORP Unmanic Tutorial](https://youtube.com/@ibracorp)
 
-## Key Features
+**Useful Links**
+- [Unmanic Official GitHub](https://github.com/Unmanic/unmanic)
+- [Unmanic Documentation](https://docs.unmanic.app/)
+- [Josh5 Docker Repository](https://hub.docker.com/u/josh5)
 
-### Processing Capabilities
-- **Video Transcoding** - HEVC/H.264 encoding with quality control
-- **Audio Processing** - Format conversion and stream management
-- **Subtitle Management** - Extract, convert, and embed subtitles
-- **Metadata Handling** - Preserve and optimize file metadata
-- **Custom Commands** - Execute scripts and external tools
+**Related Videos**
+Check IBRACORP YouTube channel for latest tutorials
+:::
 
-### Automation Features
-- **Library Scanning** - Scheduled automatic library analysis
-- **Folder Watchdog** - Real-time monitoring for new files
-- **Concurrent Processing** - Multiple simultaneous file conversions
-- **Conditional Logic** - Process files based on configurable rules
+:::warning Disclaimer
+Thank you for choosing to collaborate with IBRACORP 🙏
 
-## Installation (Unraid)
+Please read our disclaimer https://docs.ibracorp.io/#disclaimer
+:::
 
-### Basic Setup
+## Credits
 
-1. Open **Community Applications** store
-2. Search for "Unmanic" from **josh5's Repository**
-3. Install the application
+| Role | Contributor |
+|------|------------|
+| Writer / Producer | IBRACORP |
+| Video Recording and Voice | IBRACORP |
+| Developer | Josh5 |
+| Contributor | Unmanic Community |
+| Testing / Proofreading | IBRACORP Community |
 
-### Container Configuration
+## Feature List
 
-Configure the Docker template with these settings:
+**Unmanic Media Optimization Features:**
 
-**Network Configuration:**
-- Select custom Docker network if needed
-- Map host port (default: 8888)
+- Automated library scanning for non-conforming media files
+- File watchdog for monitoring new and modified files
+- Web-based interface for configuration and monitoring
+- Multiple concurrent file processing tasks
+- FFmpeg-based video and audio transcoding
+- Hardware acceleration support (NVIDIA, Intel, AMD)
+- Plugin system for extended functionality
+- Scheduled library optimization tasks
+- File movement and organization capabilities
+- Custom command execution on media files
+- Integration with Plex, Emby, Jellyfin, and Kodi
+- Cross-installation synchronization
 
-**Volume Mappings:**
-- **Library Directories** - Map your media folders
-- **Cache Directory** - Set encoding cache location
-- **Config Directory** - Persistent configuration storage
+## Prerequisites
 
-**Example Volume Configuration:**
+**System Requirements:**
+
+- **CPU:** 4+ cores (hardware encoding capable recommended)
+- **RAM:** 4GB minimum (8GB+ recommended for multiple concurrent tasks)
+- **Storage:** 50GB+ available space for cache and temporary files
+- **Network:** Stable internet connection
+- **GPU:** Optional for hardware acceleration (NVIDIA, Intel QSV, AMD VCE)
+
+**Hardware Acceleration Prerequisites:**
+- **NVIDIA GPU:** Unraid NVIDIA Driver Plugin
+- **Intel GPU:** Intel GPU TOP Plugin
+- **AMD GPU:** GPU driver support via Unraid
+
+## Installation
+
+### Unraid Docker Template
+
+**Unmanic / josh5's Repository / Media Management**
+
+**Installation Steps:**
+
+1. Head to the Community Applications store in Unraid
+2. Search for and click to install **Unmanic** from **josh5's Repository**
+3. Configure the container settings:
+   - **WebUI Port:** 8888
+   - **Config Path:** `/mnt/user/appdata/unmanic`
+   - **Library Paths:** Map your media directories
+   - **Cache Path:** `/mnt/user/unmanic-cache` (SSD recommended)
+   - **Network Type:** Bridge or custom Docker network
+4. **Configure Environment Variables:**
+   - **PUID:** 1000
+   - **PGID:** 1000
+   - **TZ:** America/New_York
+5. **Hardware Acceleration (if applicable):**
+   - **NVIDIA:** Enable NVIDIA runtime and add GPU mapping
+   - **Intel:** Map `/dev/dri` devices
+6. Click Apply and wait for the container to pull down and start
+
+### Docker Compose
+
+```yaml
+version: '3.8'
+services:
+  unmanic:
+    image: josh5/unmanic:latest
+    container_name: unmanic
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - ./unmanic-config:/config
+      - ./unmanic-cache:/tmp/unmanic
+      - /path/to/media/movies:/library/movies
+      - /path/to/media/tv:/library/tv
+      - /path/to/media/music:/library/music
+    ports:
+      - "8888:8888"
+    devices:
+      - /dev/dri:/dev/dri  # Intel hardware acceleration
+    # For NVIDIA GPU:
+    # runtime: nvidia
+    # environment:
+    #   - NVIDIA_VISIBLE_DEVICES=all
+    #   - NVIDIA_DRIVER_CAPABILITIES=compute,video,utility
 ```
-/mnt/user/media/movies:/library/movies
-/mnt/user/media/tv:/library/tv
-/mnt/user/cache/unmanic:/tmp/unmanic
-/mnt/user/appdata/unmanic:/config
-```
 
-## Hardware Acceleration Setup
+**Installation Steps:**
 
-### NVIDIA GPU Support
-
-**Prerequisites:**
-1. Install **Nvidia Driver Plugin** from Community Applications
-2. Add runtime parameter to Docker template
-
-**Configuration:**
-```bash
-# Add to Extra Parameters
---runtime=nvidia
-```
-
-**Environment Variables:**
-```
-NVIDIA_VISIBLE_DEVICES=all
-NVIDIA_DRIVER_CAPABILITIES=compute,video,utility
-```
-
-### Intel GPU Support
-
-**Prerequisites:**
-1. Install **Intel GPU TOP Plugin** from Community Applications
-2. Add device mapping to Docker template
-
-**Configuration:**
-```bash
-# Add to Extra Parameters
---device=/dev/dri
-```
+1. Save the above configuration as `docker-compose.yml`
+2. Update media paths to match your library structure
+3. Configure hardware acceleration as needed
+4. Start the container:
+   ```bash
+   docker compose up -d
+   ```
+5. Access the WebUI at `http://YOUR_SERVER_IP:8888`
 
 ## Configuration
 
-### Web Interface Access
+### Initial Setup
 
-1. Navigate to `http://serverip:8888`
-2. Complete initial setup wizard
-3. Configure library paths and processing settings
+**First-Time Configuration:**
 
-### Processing Presets
+1. Navigate to `http://YOUR_SERVER_IP:8888`
+2. Complete the setup wizard:
+   - **Library Configuration:** Add library paths
+   - **Worker Settings:** Configure concurrent processing threads
+   - **Hardware Acceleration:** Select encoding method
+   - **Plugin Installation:** Install required plugins
 
-**Video Encoding:**
-- Set target codec (H.264/HEVC)
-- Configure quality settings (CRF/bitrate)
-- Enable hardware acceleration if available
+### Library Configuration
 
-**Audio Processing:**
-- Define target audio codec
-- Set channel layout preferences
-- Configure language priorities
+**Adding Libraries:**
 
-**Subtitle Handling:**
-- Extract embedded subtitles
-- Convert subtitle formats
-- Set language preferences
+1. Navigate to **Settings → Libraries**
+2. Click **"Add Library"**
+3. **Configure Library Settings:**
+   - **Name:** Descriptive library name
+   - **Path:** Full path to media directory
+   - **Priority:** Processing priority (1-10)
+   - **Scanner:** Enable automatic scanning
+   - **Watchdog:** Monitor for file changes
 
-### Scheduling Configuration
-
-**Library Scans:**
-- Set automatic scan intervals
-- Configure scan depth and file filters
-- Enable/disable recursive directory scanning
-
-**Processing Windows:**
-- Define active processing hours
-- Set concurrent worker limits
-- Configure priority queues
-
-## Workflow Examples
-
-### Basic Media Optimization
-
+**Library Settings:**
 ```yaml
-Workflow: Standard Media Processing
-Input: Mixed codec library
-Process:
-  1. Scan for non-H.264 video files
-  2. Transcode to H.264 with CRF 23
-  3. Preserve original audio streams
-  4. Extract and convert subtitles
-  5. Update Plex library after processing
+libraries:
+  movies:
+    name: "Movies"
+    path: "/library/movies"
+    priority: 5
+    scanner_enabled: true
+    watchdog_enabled: true
+    file_extensions: [".mkv", ".mp4", ".avi", ".mov"]
+
+  tv_shows:
+    name: "TV Shows"
+    path: "/library/tv"
+    priority: 3
+    scanner_enabled: true
+    watchdog_enabled: true
+    file_extensions: [".mkv", ".mp4", ".avi"]
 ```
 
-### 4K Content Management
+### Worker Configuration
 
+**Processing Workers:**
+
+1. Navigate to **Settings → Workers**
+2. **Configure Worker Settings:**
+   - **Number of Workers:** Based on CPU cores and resources
+   - **Worker Timeout:** Maximum processing time per file
+   - **Priority Handling:** How to handle priority tasks
+
+**Worker Settings:**
 ```yaml
-Workflow: 4K Content Optimization
-Input: Large 4K media files
-Process:
-  1. Identify files over specified bitrate
-  2. Transcode with HEVC for space savings
-  3. Maintain HDR metadata
-  4. Generate lower resolution copies
-  5. Organize by quality tier
+workers:
+  total_workers: 4
+  worker_timeout: 10800  # 3 hours
+  priority_workers: 1
+  enable_hardware_encoding: true
+  max_file_size: 50000000000  # 50GB limit
 ```
 
-### Automated File Organization
+## Plugin System
 
+### Core Plugins
+
+**Essential Plugins:**
+
+1. **Video Encoder H.264/H.265:**
+   - HEVC encoding for space efficiency
+   - H.264 for compatibility
+   - Hardware acceleration support
+
+2. **Audio Processing:**
+   - Audio codec conversion
+   - Stream copying
+   - Channel layout optimization
+
+3. **Subtitle Management:**
+   - Subtitle extraction
+   - Format conversion
+   - Language filtering
+
+4. **File Organization:**
+   - File movement and renaming
+   - Directory structure management
+   - Metadata preservation
+
+### Hardware Acceleration Plugins
+
+**NVIDIA NVENC Configuration:**
 ```yaml
-Workflow: File Management
-Input: Downloaded media files
-Process:
-  1. Move files after encoding completion
-  2. Execute FileBot for proper naming
-  3. Clean up temporary files
-  4. Trigger library refresh
-  5. Send completion notifications
+nvenc_plugin:
+  encoder: "hevc_nvenc"
+  preset: "medium"
+  crf: 23
+  max_bitrate: "8M"
+  profile: "main"
+  level: "4.1"
+  hardware_device: "/dev/nvidia0"
 ```
 
-## Integration Features
+**Intel Quick Sync Configuration:**
+```yaml
+qsv_plugin:
+  encoder: "hevc_qsv"
+  preset: "medium"
+  crf: 23
+  max_bitrate: "8M"
+  profile: "main"
+  level: "4.1"
+  hardware_device: "/dev/dri/renderD128"
+```
+
+### Custom Plugins
+
+**Plugin Development:**
+```python
+# example_plugin.py
+def process_file(file_path, settings):
+    """
+    Custom file processing function
+    """
+    # Your custom processing logic here
+    result = {
+        'success': True,
+        'message': 'File processed successfully',
+        'output_path': file_path
+    }
+    return result
+
+# Plugin configuration
+plugin_config = {
+    'name': 'Custom Processor',
+    'description': 'Custom file processing plugin',
+    'version': '1.0.0',
+    'settings': {
+        'quality': 23,
+        'preset': 'medium'
+    }
+}
+```
+
+## Advanced Configuration
+
+### Encoding Profiles
+
+**Quality Profiles:**
+```yaml
+encoding_profiles:
+  high_quality:
+    video_codec: "libx265"
+    crf: 18
+    preset: "slow"
+    max_bitrate: "20M"
+    audio_codec: "aac"
+    audio_bitrate: "256k"
+
+  balanced:
+    video_codec: "libx265"
+    crf: 23
+    preset: "medium"
+    max_bitrate: "8M"
+    audio_codec: "aac"
+    audio_bitrate: "128k"
+
+  space_saver:
+    video_codec: "libx265"
+    crf: 28
+    preset: "fast"
+    max_bitrate: "4M"
+    audio_codec: "aac"
+    audio_bitrate: "96k"
+```
+
+### Conditional Processing
+
+**File Filtering Rules:**
+```yaml
+filters:
+  # Only process files larger than 5GB
+  file_size:
+    min_size: 5000000000
+
+  # Skip files already in HEVC
+  codec_filter:
+    exclude_codecs: ["hevc", "h265"]
+
+  # Process only specific resolutions
+  resolution_filter:
+    min_resolution: "1920x1080"
+    max_resolution: "3840x2160"
+
+  # File age filtering
+  file_age:
+    min_age_days: 1
+    max_age_days: 365
+```
+
+### Scheduling
+
+**Automated Scheduling:**
+```yaml
+schedules:
+  daily_scan:
+    enabled: true
+    time: "02:00"
+    action: "library_scan"
+    libraries: ["movies", "tv_shows"]
+
+  weekly_cleanup:
+    enabled: true
+    day: "sunday"
+    time: "01:00"
+    action: "cache_cleanup"
+
+  monthly_optimization:
+    enabled: true
+    day: 1
+    time: "00:00"
+    action: "full_optimization"
+```
+
+## Integration
 
 ### Plex Integration
-- **Library Scanning** - Automatic refresh after processing
-- **Metadata Preservation** - Maintain Plex metadata during conversion
-- **Quality Optimization** - Optimize for Plex streaming requirements
 
-### External Tool Support
-- **FileBot Integration** - Automated file renaming and organization
-- **Custom Scripts** - Execute bash/python scripts during processing
-- **Notification Systems** - Webhook and email notifications
+**Plex Library Updates:**
+```yaml
+plex_integration:
+  server_url: "http://plex:32400"
+  token: "your_plex_token"
+  auto_refresh: true
+  refresh_delay: 300  # seconds
+  sections_to_refresh: ["Movies", "TV Shows"]
+```
 
-## Monitoring and Management
+**Post-Processing Script:**
+```bash
+#!/bin/bash
+# plex-refresh.sh
 
-### Web Dashboard
-- **Processing Queue** - View current and pending jobs
-- **Worker Status** - Monitor active transcoding workers
-- **Statistics** - Processing history and performance metrics
-- **Logs** - Detailed processing and error logs
+PLEX_URL="http://plex:32400"
+PLEX_TOKEN="your_plex_token"
+LIBRARY_SECTION="1"  # Movies section ID
+
+# Refresh specific library section
+curl -X POST "${PLEX_URL}/library/sections/${LIBRARY_SECTION}/refresh?X-Plex-Token=${PLEX_TOKEN}"
+```
+
+### Sonarr/Radarr Integration
+
+**Webhook Configuration:**
+```yaml
+webhooks:
+  sonarr:
+    url: "http://sonarr:8989/api/v3/system/backup"
+    events: ["file_processed"]
+    headers:
+      X-Api-Key: "your_sonarr_api_key"
+
+  radarr:
+    url: "http://radarr:7878/api/v3/system/backup"
+    events: ["file_processed"]
+    headers:
+      X-Api-Key: "your_radarr_api_key"
+```
+
+## Monitoring and Maintenance
+
+### Dashboard Monitoring
+
+**Performance Metrics:**
+
+1. **Active Tasks:** Currently processing files
+2. **Queue Status:** Pending and completed tasks
+3. **Worker Status:** Active and idle workers
+4. **Library Statistics:** Files processed and space saved
+5. **Error Tracking:** Failed tasks and error rates
+
+### Logging Configuration
+
+**Log Settings:**
+```yaml
+logging:
+  level: "INFO"
+  file: "/config/logs/unmanic.log"
+  max_size: "100MB"
+  backup_count: 10
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+```
+
+**Log Analysis:**
+```bash
+# View container logs
+docker logs unmanic
+
+# Follow logs in real-time
+docker logs -f unmanic
+
+# Search for encoding errors
+docker logs unmanic 2>&1 | grep -i "error"
+
+# Monitor processing status
+docker logs unmanic 2>&1 | grep -i "processing"
+```
 
 ### Performance Optimization
-- **Worker Configuration** - Adjust concurrent processing limits
-- **Priority Queues** - Prioritize important content
-- **Resource Monitoring** - Track CPU/GPU utilization
-- **Cache Management** - Optimize temporary file handling
+
+**Resource Management:**
+```yaml
+performance:
+  cpu_cores: 8
+  memory_limit: "8G"
+  cache_size: "20G"
+  temp_directory: "/tmp/unmanic"
+  parallel_tasks: 4
+  io_priority: "normal"
+```
+
+**Cache Management:**
+```bash
+# Monitor cache usage
+du -sh /path/to/unmanic-cache/
+
+# Clean cache directory
+find /path/to/unmanic-cache/ -type f -mtime +7 -delete
+
+# Monitor disk I/O
+iostat -x 1
+```
 
 ## Troubleshooting
 
 ### Common Issues
 
-**Transcoding Failures:**
-- Check input file integrity
-- Verify codec compatibility
-- Review processing logs for errors
-- Ensure sufficient disk space
+**Encoding Failures:**
+```bash
+# Check FFmpeg availability
+docker exec unmanic ffmpeg -version
 
-**Hardware Acceleration Problems:**
-- Verify GPU driver installation
-- Check Docker runtime configuration
-- Validate device permissions
-- Review NVIDIA/Intel plugin status
+# Test hardware acceleration
+docker exec unmanic ffmpeg -hwaccels
 
-**Performance Issues:**
-- Adjust worker thread count
-- Optimize cache directory location
-- Monitor system resource usage
-- Consider processing schedule adjustments
+# Verify GPU access (NVIDIA)
+docker exec unmanic nvidia-smi
 
-### Log Analysis
+# Check Intel GPU access
+docker exec unmanic ls -la /dev/dri/
+```
 
-**Key Log Locations:**
-- Container logs: `docker logs unmanic`
-- Application logs: Available in web interface
-- Processing logs: Per-file conversion details
+**Permission Issues:**
+```bash
+# Fix file permissions
+docker exec unmanic chown -R abc:abc /config
+docker exec unmanic chown -R abc:abc /library
 
-## Best Practices
+# Check file access
+docker exec unmanic ls -la /library/movies/
+```
 
-### Library Management
-- **Backup Strategy** - Always backup original files before processing
-- **Test Workflows** - Validate settings with small test batches
-- **Quality Control** - Regularly review transcoded output quality
-- **Storage Planning** - Account for temporary file space requirements
+**Memory Issues:**
+```bash
+# Monitor memory usage
+docker stats unmanic
 
-### Performance Optimization
-- **Schedule Processing** - Run intensive tasks during off-peak hours
-- **GPU Utilization** - Leverage hardware acceleration when available
-- **Concurrent Limits** - Balance throughput with system stability
-- **Cache Management** - Use fast storage for temporary files
+# Adjust worker count
+# Reduce concurrent workers if running out of memory
 
-### Maintenance
-- **Regular Updates** - Keep Unmanic updated for bug fixes and features
-- **Log Rotation** - Manage log file sizes and retention
-- **Database Cleanup** - Periodically clean processing history
-- **Configuration Backup** - Export and backup your configurations
+# Check swap usage
+free -h
+```
 
-## Related Documentation
+### Error Resolution
 
-- [Media Server Integration](../media/plex-setup.md)
+**Common Error Solutions:**
 
-For advanced configuration options and plugin development, refer to the official Unmanic documentation and community resources.
+1. **"FFmpeg not found":**
+   - Ensure container includes FFmpeg
+   - Check PATH environment variable
+   - Verify container architecture compatibility
+
+2. **"Hardware acceleration failed":**
+   - Verify GPU drivers are installed
+   - Check device mapping in Docker
+   - Test hardware encoding manually
+
+3. **"File access denied":**
+   - Check PUID/PGID settings
+   - Verify file permissions
+   - Ensure proper volume mounting
+
+4. **"Processing timeout":**
+   - Increase worker timeout
+   - Reduce file size limits
+   - Check system resources
+
+### Performance Tuning
+
+**Optimization Tips:**
+
+1. **Storage Configuration:**
+   ```yaml
+   storage_optimization:
+     cache_on_ssd: true
+     temp_on_tmpfs: false  # Only if sufficient RAM
+     separate_input_output: true
+   ```
+
+2. **Encoding Settings:**
+   ```yaml
+   encoding_optimization:
+     preset: "medium"  # Balance speed vs quality
+     threads: 0        # Auto-detect optimal thread count
+     lookahead: 25     # Improve quality at cost of speed
+   ```
+
+3. **Resource Allocation:**
+   ```yaml
+   resources:
+     cpu_limit: "6.0"
+     memory_limit: "8G"
+     nice_level: 10    # Lower priority for background processing
+   ```
+
+## Backup and Recovery
+
+### Configuration Backup
+
+**Backup Script:**
+```bash
+#!/bin/bash
+# unmanic-backup.sh
+
+BACKUP_DIR="/backup/unmanic"
+CONFIG_DIR="/path/to/unmanic-config"
+DATE=$(date +%Y%m%d_%H%M%S)
+
+# Create backup directory
+mkdir -p "$BACKUP_DIR"
+
+# Backup configuration
+tar -czf "$BACKUP_DIR/unmanic-config-$DATE.tar.gz" \
+  --exclude="$CONFIG_DIR/logs" \
+  --exclude="$CONFIG_DIR/cache" \
+  "$CONFIG_DIR"
+
+# Keep only last 30 backups
+find "$BACKUP_DIR" -name "unmanic-config-*.tar.gz" -mtime +30 -delete
+```
+
+### Database Backup
+
+**Database Management:**
+```bash
+# Backup Unmanic database
+cp /path/to/unmanic-config/unmanic.db /backup/unmanic-db-$(date +%Y%m%d).db
+
+# Restore database
+docker stop unmanic
+cp /backup/unmanic-db-20241218.db /path/to/unmanic-config/unmanic.db
+docker start unmanic
+```
+
+## Advanced Use Cases
+
+### Batch Processing
+
+**Mass Conversion Script:**
+```python
+#!/usr/bin/env python3
+# batch_convert.py
+
+import os
+import requests
+import json
+
+UNMANIC_URL = "http://localhost:8888"
+LIBRARY_PATH = "/library/movies"
+
+def queue_all_files():
+    """Queue all files in library for processing"""
+
+    api_endpoint = f"{UNMANIC_URL}/api/v1/queue/add_library"
+
+    payload = {
+        "library_path": LIBRARY_PATH,
+        "force_reprocess": False
+    }
+
+    response = requests.post(api_endpoint, json=payload)
+
+    if response.status_code == 200:
+        print("Successfully queued library for processing")
+    else:
+        print(f"Failed to queue library: {response.text}")
+
+if __name__ == "__main__":
+    queue_all_files()
+```
+
+### Custom Workflows
+
+**Multi-Stage Processing:**
+```yaml
+workflows:
+  movie_pipeline:
+    stages:
+      - plugin: "extract_subtitles"
+        settings:
+          languages: ["eng", "spa"]
+
+      - plugin: "video_encoder"
+        settings:
+          codec: "hevc"
+          crf: 23
+
+      - plugin: "audio_processor"
+        settings:
+          codec: "aac"
+          bitrate: "128k"
+
+      - plugin: "file_mover"
+        settings:
+          destination: "/optimized/movies"
+
+      - plugin: "plex_refresh"
+        settings:
+          section_id: 1
+```
+
+## Special Thanks
+
+- **Josh5** for developing and maintaining Unmanic
+- **Unmanic Community** for extensive plugin development and support
+- To our fantastic Discord community and our Admins **DiscDuck** and **Hawks** for their input and documentation (as always)
+
+Please support the developers and creators involved in this work to help show them some love. ❤️
+
+## Final Words
+
+We hope you enjoyed this guide. It was conceptualized, written, and implemented by our Admin **Sycotix**.
+
+## Support Us
+
+Our work sometimes takes months to research and develop.
+
+If you want to help support us please consider:
+
+- Liking and Subscribing to our [Youtube channel](https://youtube.com/@ibracorp)
+- Joining our [Discord server](https://discord.gg/ibracorp)
+- Becoming a paid member on our [IBRACORP website](https://ibracorp.io)
+- Donating via [Paypal](https://paypal.me/ibracorp)
+
+**Thank you for being part of our community!**
