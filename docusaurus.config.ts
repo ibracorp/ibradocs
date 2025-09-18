@@ -117,7 +117,7 @@ const config: Config = {
             },
             {
               label: 'Media Servers',
-              to: '/docs/media/plex-setup',
+              to: '/docs/media/jellyfin',
             },
           ],
         },
