@@ -128,24 +128,6 @@ A pre-commit hook automatically runs on every commit to:
 
 If the hook finds issues it can't auto-fix, the commit will be rejected. Fix the issues and try committing again.
 
-## IBRACORP Brand Guidelines
-
-### Colors
-- **Primary Red**: `#E94B3C` (RGB: 233, 75, 60)
-- **Dark Variants**: Auto-generated from primary
-- **Usage**: Buttons, links, hover states, accents
-
-### Typography
-- **Headings**: Bold, clear hierarchy
-- **Body**: Optimized line-height (1.6) for readability
-- **Code**: Monospace with syntax highlighting
-
-### Design Principles
-- **Dark First**: Default dark mode for tech audience
-- **High Contrast**: Ensure readability in both themes
-- **Modern**: Clean cards, smooth animations, glass effects
-- **Mobile Ready**: Responsive design for all devices
-
 ## Contributing
 
 1. **Fork & Clone**: Set up your development environment
