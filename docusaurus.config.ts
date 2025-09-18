@@ -155,6 +155,19 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: 'Legal',
+          items: [
+            {
+              label: 'Privacy Policy',
+              to: '/docs/privacy-policy',
+            },
+            {
+              label: 'Terms & Conditions',
+              to: '/docs/terms-and-conditions',
+            },
+          ],
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} IBRACORP™. All rights reserved.`,
     },

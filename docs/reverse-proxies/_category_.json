@@ -1,8 +1,0 @@
-{
-  "label": "Reverse Proxies",
-  "position": 5,
-  "link": {
-    "type": "generated-index",
-    "description": "Nginx Proxy Manager, Traefik, and other reverse proxy solutions. Secure external access to your self-hosted services."
-  }
-}

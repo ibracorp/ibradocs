@@ -27,12 +27,31 @@ yarn start    # Start development server
 yarn build    # Build for production
 ```
 
+## Creating New Documentation
+
+Use the interactive documentation generator to create new guides that follow the IBRACORP template:
+
+```bash
+make docs
+# or
+yarn make:docs
+```
+
+This will prompt you for:
+- Application/service title
+- One-sentence description
+- Category (Gaming Servers, Media Servers, Security, etc.)
+- Optional: Official docs URL, main website, repository name
+
+The generator will create a new markdown file in the appropriate category directory with all the IBRACORP template structure and placeholders ready for you to fill in.
+
 ## Available Commands
 
 ### Development
 - `make dev` or `yarn start` - Start local development server with hot reloading
 - `make serve` or `yarn serve` - Serve built site locally
 - `make clean` or `yarn clear` - Clear Docusaurus cache
+- `make docs` or `yarn make:docs` - Interactive documentation generator
 
 ### Build & Deploy
 - `make build` or `yarn build` - Build static site for production

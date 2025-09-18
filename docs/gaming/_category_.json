@@ -1,8 +1,6 @@
 {
   "label": "Gaming Servers",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "Set up and manage game servers including Minecraft, Palworld, and more. Complete guides for installation, configuration, and optimization."
-  }
+  "position": 5,
+  "collapsible": true,
+  "collapsed": false
 }

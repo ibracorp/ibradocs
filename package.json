@@ -2,6 +2,7 @@
   "name": "ibradocs",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -17,7 +18,8 @@
     "lint:fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "make:docs": "node scripts/make-doc.cjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.8.1",
