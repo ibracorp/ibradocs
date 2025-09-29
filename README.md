@@ -138,7 +138,7 @@ If the hook finds issues it can't auto-fix, the commit will be rejected. Fix the
 
 ## Community Links
 
-- 💬 **Discord**: [Join IBRACORP Community](https://discord.gg/ibracorp)
+- 💬 **Discord**: [Join IBRACORP Community](https://discord.gg/VWAG7rZ)
 - 📺 **YouTube**: [IBRACORP Channel](https://youtube.com/@ibracorp)
 - 🐙 **GitHub**: [IBRACORP Organization](https://github.com/ibracorp)
 - 💝 **Support**: [Donate via PayPal](https://paypal.me/ibracorp)
