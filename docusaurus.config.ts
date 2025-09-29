@@ -44,7 +44,7 @@ const config: Config = {
           routeBasePath: '/docs', // Standard docs path
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/ibracorp/ibradocs/edit/main/docs',
+          editUrl: 'https://github.com/ibracorp/ibradocs/edit/main/',
         },
         blog: {
           showReadingTime: true,
@@ -54,7 +54,7 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/ibracorp/ibradocs/edit/main/docs',
+          editUrl: 'https://github.com/ibracorp/ibradocs/edit/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -84,7 +84,7 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          href: 'https://discord.gg/ibracorp',
+          href: 'https://discord.gg/VWAG7rZ',
           label: 'Discord',
           position: 'right',
         },
@@ -125,7 +125,7 @@ const config: Config = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.gg/ibracorp',
+              href: 'https://discord.gg/VWAG7rZ',
             },
             {
               label: 'YouTube',
