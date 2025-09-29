@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
         Complete guides for installation, configuration, and optimization.
       </>
     ),
-    link: '/docs/category/gaming-servers',
+    link: '/docs/gaming/crafty-minecraft',
   },
   {
     title: 'Media Servers & Management',
@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
         related automation tools for your media library.
       </>
     ),
-    link: '/docs/category/media-servers--management',
+    link: '/docs/media/jellyfin',
   },
   {
     title: 'Networking',
@@ -43,7 +43,7 @@ const FeatureList: FeatureItem[] = [
         Learn to secure and optimize your network infrastructure.
       </>
     ),
-    link: '/docs/category/networking',
+    link: '/docs/networking/cloudflare-tunnel',
   },
   {
     title: 'Reverse Proxies',
@@ -54,7 +54,7 @@ const FeatureList: FeatureItem[] = [
         external access to your self-hosted services.
       </>
     ),
-    link: '/docs/category/reverse-proxies',
+    link: '/docs/reverse-proxies/swag',
   },
   {
     title: 'Security',
@@ -65,7 +65,7 @@ const FeatureList: FeatureItem[] = [
         certificates, and security best practices for self-hosted environments.
       </>
     ),
-    link: '/docs/category/security',
+    link: '/docs/security/authelia',
   },
   {
     title: 'Misc. Tools',
@@ -76,7 +76,7 @@ const FeatureList: FeatureItem[] = [
         backup solutions, and productivity applications.
       </>
     ),
-    link: '/docs/category/misc-tools',
+    link: '/docs/misc-tools/docker-compose',
   },
 ];
 
