@@ -11,11 +11,8 @@ source_url: https://docs.ibracorp.io/crafty-minecraft-server/
 Unraid dedicated server hosting for Minecraft using Crafty Controller
 
 :::info Crafty Minecraft Server Setup
+
 **Video**
-[![IBRACORP Crafty Minecraft Tutorial](https://img.youtube.com/vi/Xqsc9sNTq0I/0.jpg)](https://www.youtube.com/watch?v=Xqsc9sNTq0I)
-
-https://www.youtube.com/watch?v=Xqsc9sNTq0I
-
 <iframe
   width="560"
   height="315"
