@@ -16,6 +16,16 @@ Unraid dedicated server hosting for Minecraft using Crafty Controller
 
 https://www.youtube.com/watch?v=Xqsc9sNTq0I
 
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/Xqsc9sNTq0I"
+  title="IBRACORP Crafty Minecraft Tutorial"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
+
 **Useful Links**
 - [Crafty Controller Official GitHub](https://gitlab.com/crafty-controller/crafty-4)
 - [Minecraft Official Website](https://minecraft.net/)
