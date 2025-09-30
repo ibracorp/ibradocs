@@ -33,7 +33,7 @@ Most guides assume basic familiarity with:
 
 ### Getting Help
 
-- 💬 **Discord**: Join our [community](https://discord.gg/ibracorp) for real-time help
+- 💬 **Discord**: Join our [community](https://discord.gg/VWAG7rZ) for real-time help
 - 📺 **YouTube**: Watch video tutorials on our [channel](https://youtube.com/@ibracorp)
 - 📚 **Documentation**: Browse categories using the sidebar navigation
 
