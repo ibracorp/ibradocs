@@ -27,7 +27,7 @@ function HomepageHeader() {
           </Link>
           <Link
             className="button button--outline button--secondary button--lg"
-            href="https://discord.gg/ibracorp">
+            href="https://discord.gg/VWAG7rZ">
             Join Discord 💬
           </Link>
         </div>
