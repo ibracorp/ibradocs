@@ -22,8 +22,8 @@ IBRACORP and its contributors are not responsible for:
 ### Support
 
 For questions and support:
-- Join our [Discord community](https://discord.gg/ibracorp)
+- Join our [Discord community](https://discord.gg/VWAG7rZ)
 - Check our [YouTube channel](https://youtube.com/@ibracorp) for video guides
 - Review existing documentation thoroughly before asking questions
 
-**Remember**: The homelab community thrives on shared knowledge and responsible practices. Always prioritize security and proper testing!
+**Remember**: The homelab community thrives on shared knowledge and responsible practices. Always prioritise security and proper testing!
