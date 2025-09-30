@@ -11,8 +11,26 @@ source_url: https://docs.ibracorp.io/jellyfin/
 Unraid media server hosting for Jellyfin
 
 :::info Jellyfin Media Server
+
 **Video**
-[IBRACORP Jellyfin Tutorial](https://youtube.com/@ibracorp)
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/6NAfgDlNlUw"
+  title="IBRACORP Jellyfin Tutorial"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/HIExT8xq1BQ"
+  title="IBRACORP Jellyfin Tutorial"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
 
 **Useful Links**
 - [Jellyfin Official Website](https://jellyfin.org/)

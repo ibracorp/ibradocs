@@ -11,8 +11,17 @@ source_url: https://docs.ibracorp.io/pterodactyl-docker-1/
 Unraid game server management panel using Pterodactyl Docker
 
 :::info Pterodactyl Docker Setup
+
 **Video**
-[IBRACORP Pterodactyl Docker Tutorial](https://youtube.com/@ibracorp)
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/gESfcKDX804"
+  title="IBRACORP Pterodactyl Docker Tutorial"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
 
 **Useful Links**
 - [Pterodactyl Official Website](https://pterodactyl.io/)
