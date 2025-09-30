@@ -117,7 +117,7 @@ We hope you found this post helpful! Creating detailed guides and tutorials take
 If you want to help support us please consider:
 
 - 👍 Liking and Subscribing to our [YouTube channel](https://youtube.com/@ibracorp)
-- 💬 Joining our [Discord server](https://discord.gg/ibracorp)
+- 💬 Joining our [Discord server](https://discord.gg/VWAG7rZ)
 - 🎯 Becoming a paid member on our [IBRACORP website](https://ibracorp.io)
 - 💝 Donating via [PayPal](https://paypal.me/ibracorp)
 
