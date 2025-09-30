@@ -430,7 +430,7 @@ Our work sometimes takes months to research and develop.
 If you want to help support us please consider:
 
 - Liking and Subscribing to our [Youtube channel](https://youtube.com/@ibracorp)
-- Joining our [Discord server](https://discord.gg/ibracorp)
+- Joining our [Discord server](https://discord.gg/VWAG7rZ)
 - Becoming a paid member on our [IBRACORP website](https://ibracorp.io)
 - Donating via [Paypal](https://paypal.me/ibracorp)
 

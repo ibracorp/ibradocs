@@ -31,7 +31,7 @@ export default function CommunitySection(): ReactNode {
                 </p>
                 <Link
                   className="button button--primary"
-                  href="https://discord.gg/ibracorp">
+                  href="https://discord.gg/VWAG7rZ">
                   Join Discord Community
                 </Link>
               </div>

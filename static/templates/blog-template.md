@@ -126,7 +126,7 @@ If you want to help support us please consider:
 ---
 
 :::tip Share Your Experience
-Have you tried implementing what we covered in this post? Share your experience in our [Discord server](https://discord.gg/ibracorp) or tag us on social media!
+Have you tried implementing what we covered in this post? Share your experience in our [Discord server](https://discord.gg/VWAG7rZ) or tag us on social media!
 :::
 
 :::danger INTERNAL USE ONLY - DELETE THIS BEFORE PUBLISHING
